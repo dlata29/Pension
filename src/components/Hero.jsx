@@ -1,37 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../css/Hero.css";
 
-export default function Hero() {
-  const [showNav, setShowNav] = useState(false);
+export default function Hero({ onVideoEnd }) {
   const [showText, setShowText] = useState(false);
+  const videoRef = useRef(null);
 
   useEffect(() => {
-    // Navbar appears first (after 1s)
-    const navTimer = setTimeout(() => setShowNav(true), 1000);
+    const textTimer = setTimeout(() => setShowText(true), 1500);
 
-    // Hero text appears after 2s
-    const textTimer = setTimeout(() => setShowText(true), 2000);
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      videoElement.playbackRate = 2;
+      videoElement.addEventListener("ended", onVideoEnd);
+    }
 
     return () => {
-      clearTimeout(navTimer);
       clearTimeout(textTimer);
+      if (videoElement) {
+        videoElement.removeEventListener("ended", onVideoEnd);
+      }
     };
-  }, []);
+  }, [onVideoEnd]);
 
   return (
     <section className="hero-section">
       {/* Background Video */}
-      <video className="hero-video" src="/videos/HarpSharp.mp4" autoPlay muted />
+      <video ref={videoRef} className="hero-video" src="/videos/HarpSharp.mp4" autoPlay muted />
 
       {/* Overlay (contains navbar + text) */}
       <div className="hero-overlay left-align">
         {/* Hero Text with fade-in */}
         <div className={`hero-content ${showText ? "visible" : "hidden"}`}>
-          <p>Welcome to Harp Code</p>
-          <h2>
-            <i>Transforming Ideas into Intelligent Tools.</i>
-          </h2>
-          <button>Get Started</button>
+          <span>
+            Harp <span className="gradient-text">&</span> Code
+          </span>
+          <p>
+            <i>Transforming Ideas into Intelligent Tools</i>
+          </p>
         </div>
       </div>
     </section>

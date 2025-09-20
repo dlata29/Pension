@@ -7,7 +7,7 @@
   z-index: 50;
   width: 100%;
   max-width: 900px;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .navbar-wrapper.visible {
@@ -70,7 +70,7 @@
 }
 
 .btn-primary {
-  background-color: #111827;
+  background-color: #07569b;
   color: #ffffff;
   padding: 0.5rem 1rem;
   border-radius: 8px;

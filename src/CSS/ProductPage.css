@@ -79,13 +79,6 @@
   color: #f5f5f5; /* soft white */
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-  color: #dcdcdc; /* muted white */
-}
-
 /* Hero button (optional) */
 .hero-content button {
   margin-top: 1.5rem;

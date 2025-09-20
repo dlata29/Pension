@@ -7,25 +7,26 @@ import Products from "./components/Products";
 import WebDevelopment from "./components/WebDevelopment";
 import AppDevelopment from "./components/AppDevelopment";
 import AISolutions from "./components/AISolutions";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [isNavbarVisible, setNavbarVisible] = useState(false);
   const productsSectionRef = useRef(null);
 
+  const handleVideoEnd = () => {
+    setNavbarVisible(true);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // If the section is intersecting (visible on screen)
         if (entry.isIntersecting) {
           setNavbarVisible(true);
-        }
-        // If we scroll back up and the section is completely above the viewport
-        else if (entry.boundingClientRect.top > 0) {
+        } else if (entry.boundingClientRect.top > 0) {
           setNavbarVisible(false);
         }
       },
       {
-        // A threshold of 0 triggers as soon as the first pixel is visible
         threshold: 0.5,
       }
     );
@@ -44,7 +45,6 @@ export default function App() {
 
   return (
     <Router>
-      {/* 1. The Navbar is now here, at the top level */}
       <Navbar isVisible={isNavbarVisible} />
 
       <div>
@@ -53,8 +53,7 @@ export default function App() {
             path="/"
             element={
               <>
-                <Hero />
-                {/* 2. Pass the ref to the Products component */}
+                <Hero onVideoEnd={handleVideoEnd} />
                 <Products ref={productsSectionRef} />
                 <About />
               </>
@@ -65,6 +64,7 @@ export default function App() {
           <Route path="/products/ai-solutions" element={<AISolutions />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }
