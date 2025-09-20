@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../css/About.css";
 export default function About() {
   return (
     <section style={{ padding: "60px 20px", maxWidth: "800px", margin: "0 auto" }}>
