@@ -1,16 +1,94 @@
 .about-section {
-  padding: 60px 20px;
-  max-width: 800px;
+  padding: 4rem 2rem;
+  background-color: #f9fafb; /* Light background for the whole section */
+  position: relative;
+  z-index: 4;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  align-items: center;
 }
 
-.about-section h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+.about-text-column {
+  flex: 1; /* Take up remaining space */
+  min-width: 300px; /* Prevent it from getting too squished */
 }
 
-.about-section p {
+.about-image-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image-column img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.about-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.about-headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.about-description p {
   font-size: 1rem;
-  margin-bottom: 20px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.about-specialties {
+  list-style-type: "✓  "; /* Adds a checkmark before each item */
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: #4b5563;
+}
+
+.about-specialties li {
+  margin-bottom: 0.5rem;
+}
+
+.about-contact-button {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1.5rem;
+}
+
+.about-contact-button:hover {
+  background-color: #374151;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2rem;
+  }
 }

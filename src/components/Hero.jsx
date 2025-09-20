@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../css/Hero.css";
-import Navbar from "./Navbar";
 
 export default function Hero() {
   const [showNav, setShowNav] = useState(false);
@@ -26,11 +25,6 @@ export default function Hero() {
 
       {/* Overlay (contains navbar + text) */}
       <div className="hero-overlay left-align">
-        {/* Navbar with fade-in */}
-        <div className={`fade-in ${showNav ? "visible" : "hidden"}`}>
-          <Navbar />
-        </div>
-
         {/* Hero Text with fade-in */}
         <div className={`hero-content ${showText ? "visible" : "hidden"}`}>
           <p>Welcome to Harp Code</p>

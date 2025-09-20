@@ -1,9 +1,18 @@
 /* src/CSS/Products.css */
 
+/* In src/CSS/Products.css */
+
 .products-section {
   padding: 4rem 2rem;
   background-color: #f9fafb; /* Lighter gray background */
   text-align: center;
+
+  /* --- Add these lines --- */
+  margin-top: -80px; /* Pulls the section up over the hero */
+  position: relative; /* Required for z-index */
+  z-index: 5; /* Ensures it sits above the hero section */
+  border-top-left-radius: 24px; /* Rounds the top-left corner */
+  border-top-right-radius: 24px; /* Rounds the top-right corner */
 }
 
 .products-header {
@@ -14,11 +23,11 @@
 .services-tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  border: 1px solid #d1d5db; /* Gray border */
-  border-radius: 9999px; /* Pill shape */
+  background-color: #f3f4f6;
+  border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #4b5563; /* Gray text */
+  color: #4b5563;
   margin-bottom: 1rem;
 }
 
