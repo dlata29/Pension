@@ -33,8 +33,10 @@ export default function Hero() {
 
         {/* Hero Text with fade-in */}
         <div className={`hero-content ${showText ? "visible" : "hidden"}`}>
-          <h1>Welcome to UN Project</h1>
-          <p>Your tagline or mission statement goes here</p>
+          <p>Welcome to Harp Code</p>
+          <h2>
+            <i>Transforming Ideas into Intelligent Tools.</i>
+          </h2>
           <button>Get Started</button>
         </div>
       </div>

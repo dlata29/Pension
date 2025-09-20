@@ -1,15 +1,41 @@
 import React, { useState, useEffect } from "react";
-import "../css/ProductPage.css";
+import "../css/ProductPage.css"; // This CSS file is shared by all product pages
 import Navbar from "./Navbar";
+
+// SVG Icon for the tickmark
+const TickIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="tick-icon">
+    <polyline points="20 6 9 17 4 12"></polyline>
+  </svg>
+);
 
 export default function WebDevelopment() {
   const [showNav, setShowNav] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
   const services = [
-    "Custom Websites → Responsive, SEO-friendly sites tailored for your brand.",
-    "E-commerce Platforms → Scalable online stores with secure payment integrations.",
-    "WordPress & CMS Solutions → Easy-to-manage content platforms for blogs, portfolios, and enterprises.",
+    {
+      feature: "Custom Websites",
+      detail: "Responsive, SEO-friendly sites tailored for your brand.",
+    },
+    {
+      feature: "E-commerce Platforms",
+      detail: "Scalable online stores with secure payment integrations.",
+    },
+    {
+      feature: "WordPress & CMS Solutions",
+      detail: "Easy-to-manage content platforms for blogs, portfolios, and enterprises.",
+    },
   ];
 
   useEffect(() => {
@@ -23,16 +49,12 @@ export default function WebDevelopment() {
 
   return (
     <div className="product-page">
-      {/* Hero Section */}
+      {/* Hero Section remains the same */}
       <section className="product-hero web-dev">
-        {/* Overlay */}
         <div className="hero-overlay">
-          {/* Navbar fade-in */}
           <div className={`fade-in navbar-fade ${showNav ? "visible" : "hidden"}`}>
             <Navbar />
           </div>
-
-          {/* Hero Content fade-in */}
           <div className={`hero-content ${showContent ? "visible" : "hidden"}`}>
             <h1>Web Development Services</h1>
             <p>Build modern, responsive, and high-performing websites for your brand.</p>
@@ -40,11 +62,16 @@ export default function WebDevelopment() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section updated with tickmarks */}
       <section className="product-services">
         {services.map((service, idx) => (
           <div key={idx} className="service-card">
-            <p>{service}</p>
+            <div className="service-item">
+              <TickIcon />
+              <p>
+                <strong>{service.feature}</strong> → {service.detail}
+              </p>
+            </div>
           </div>
         ))}
       </section>
