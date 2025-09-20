@@ -25,10 +25,12 @@ export default function WebDevelopment() {
     <div className="product-page">
       {/* Hero Section */}
       <section className="product-hero web-dev">
+        {/* Optional Background Video */}
+
         {/* Overlay */}
         <div className="hero-overlay">
           {/* Navbar fade-in */}
-          <div className={`fade-in navbar-fade ${showNav ? "visible" : "hidden"}`}>
+          <div className={`fade-in ${showNav ? "visible" : "hidden"}`}>
             <Navbar />
           </div>
 
@@ -40,8 +42,8 @@ export default function WebDevelopment() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="product-services">
+      {/* Services Section (floating above hero) */}
+      <section className="product-services overlay-services">
         {services.map((service, idx) => (
           <div key={idx} className="service-card">
             <p>{service}</p>
