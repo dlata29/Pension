@@ -7,7 +7,7 @@ import Products from "./components/Products";
 import WebDevelopment from "./components/WebDevelopment";
 import AppDevelopment from "./components/AppDevelopment";
 import AISolutions from "./components/AISolutions";
-
+import Footer from "./components/Footer";
 export default function App() {
   const [isNavbarVisible, setNavbarVisible] = useState(false);
   const productsSectionRef = useRef(null);
@@ -65,6 +65,7 @@ export default function App() {
           <Route path="/products/ai-solutions" element={<AISolutions />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }
