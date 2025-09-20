@@ -1,0 +1,59 @@
+.product-page {
+  font-family: 'Inter', sans-serif;
+  color: #111;
+}
+
+.product-hero {
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  color: #fff;
+  border-radius: 0 0 40% 40% / 0 0 10% 10%;
+}
+
+.product-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.product-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Different hero colors for each category */
+.web-dev {
+  background: linear-gradient(135deg, #4f46e5, #818cf8); /* Indigo gradient */
+}
+
+.app-dev {
+  background: linear-gradient(135deg, #10b981, #6ee7b7); /* Green gradient */
+}
+
+.ai-solutions {
+  background: linear-gradient(135deg, #f59e0b, #fcd34d); /* Amber gradient */
+}
+
+.product-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: -3rem auto 4rem; /* pull up slightly over hero */
+  padding: 0 1rem;
+}
+
+.service-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}

@@ -4,7 +4,7 @@
   gap: 1.5rem; /* space between logo and links */
   padding: 0.1rem 0.6rem;
 
-  background: rgb(221 197 197 / 60%); /* semi-transparent bg */
+  background: rgba(227, 210, 210, 0.6); /* semi-transparent bg */
   border-radius: 38px;
 
   margin-top: 20px; /* so it’s not stuck at top */

@@ -12,7 +12,6 @@ export default function App() {
   return (
     <Router>
       <div>
-        <Navbar />
         <Routes>
           {/* Main page */}
           <Route
