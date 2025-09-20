@@ -1,7 +1,14 @@
+/* General Product Page */
+.product-page {
+  font-family: "Inter", sans-serif;
+  color: #111;
+  position: relative;
+}
+
 /* Hero Section */
 .product-hero {
   position: relative;
-  height: 75vh;
+  height: 60vh; /* reduced height */
   width: 100%;
   overflow: hidden;
   text-align: center;
@@ -9,6 +16,7 @@
   border-radius: 0 0 40% 40% / 0 0 10% 10%;
 }
 
+/* Background Video */
 .hero-video {
   position: absolute;
   top: 0;
@@ -19,6 +27,7 @@
   z-index: 1;
 }
 
+/* Hero Overlay */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -28,11 +37,23 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: center; /* hero text centered */
   padding-top: 2rem;
   z-index: 5;
 }
 
+/* Navbar only on left for product pages */
+.product-page .navbar-fade {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transform: none;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 20;
+}
+
+/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transition: opacity 1s ease;
@@ -44,6 +65,7 @@
 
 .hero-content {
   opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .hero-content.visible {
@@ -52,7 +74,29 @@
 
 /* Web Dev Hero Gradient */
 .web-dev {
-  background: linear-gradient(135deg, #4f46e5, #818cf8);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.app-dev {
+  /* Dark charcoal gradient */
+  background: linear-gradient(135deg, #1c1c1c, #2f2f2f, #4a4a4a);
+}
+
+.ai-solutions {
+  /* Dark charcoal gradient */
+  background: linear-gradient(135deg, #1c1c1c, #2f2f2f, #4a4a4a);
+}
+/* Gradient animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Product Services Section */
@@ -66,9 +110,10 @@
 
   position: relative; /* allow z-index */
   z-index: 10; /* appear above hero */
-  margin-top: -20px; /* pull up over hero */
+  margin-top: -60px; /* pull up over hero */
 }
 
+/* Service Card */
 .service-card {
   background: #fff;
   padding: 2rem;
@@ -82,4 +127,16 @@
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust hero content spacing if shorter hero */
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
