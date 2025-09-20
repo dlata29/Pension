@@ -1,8 +1,9 @@
 .hero-section {
   position: relative;
-  height: 70vh;
+  height: 75vh;
   width: 100%;
   overflow: hidden;
+  border-radius: 0 0 40% 40% / 0 0 10% 10%;
 }
 
 .hero-video {
@@ -15,12 +16,17 @@
   z-index: -1; /* keep video in background */
 }
 
-.hero-overlay {
-  position: relative;
-  height: 100%;
-  width: 100%;
+.hero-overlay.left-align {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* align everything to the left */
+  justify-content: flex-start; /* top-align */
+  padding: 2rem 4rem; /* add padding from top/left */
+}
+
+/* Navbar inside left-aligned overlay */
+.hero-overlay.left-align .fade-in {
+  margin-bottom: 2rem; /* space between navbar and hero text */
 }
 
 /* Hero text */

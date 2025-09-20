@@ -25,7 +25,7 @@ export default function Hero() {
       <video className="hero-video" src="/videos/HarpSharp.mp4" autoPlay muted />
 
       {/* Overlay (contains navbar + text) */}
-      <div className="hero-overlay">
+      <div className="hero-overlay left-align">
         {/* Navbar with fade-in */}
         <div className={`fade-in ${showNav ? "visible" : "hidden"}`}>
           <Navbar />
