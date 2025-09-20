@@ -6,7 +6,7 @@ export default function Hero({ onVideoEnd }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    const textTimer = setTimeout(() => setShowText(true), 1500);
+    const textTimer = setTimeout(() => setShowText(true), 2000);
 
     const videoElement = videoRef.current;
     if (videoElement) {
