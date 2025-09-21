@@ -11,11 +11,6 @@
   opacity: 0;
 }
 
-.navbar-wrapper.slide-in {
-  top: 1rem; /* Slide down into view */
-  opacity: 1;
-}
-
 /* Main navbar styles */
 .navbar {
   display: flex;
