@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 import "../CSS/Navbar.css";
 
 export default function Navbar({ isVisible }) {
+  console.log("Navbar isVisible:", isVisible);
   return (
     <div className={`navbar-wrapper ${isVisible ? "visible" : ""}`}>
-      console.log("Navbar isVisible:", isVisible);
       <nav className="navbar">
         <div className="navbar-left">
           <div className="logo">
