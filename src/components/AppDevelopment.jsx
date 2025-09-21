@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../css/ProductPage.css";
+import "../CSS/ProductPage.css";
 import Navbar from "./Navbar";
 
 // SVG Icon for the tickmark

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../css/Hero.css";
+import "../CSS/Hero.css";
 
 export default function Hero({ onVideoEnd }) {
   const [showText, setShowText] = useState(false);

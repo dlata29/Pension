@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../css/ProductPage.css"; // This CSS file is shared by all product pages
+import "../CSS/ProductPage.css"; // This CSS file is shared by all product pages
 import Navbar from "./Navbar";
 
 // SVG Icon for the tickmark
