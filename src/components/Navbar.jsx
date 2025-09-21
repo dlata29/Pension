@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "../CSS/Navbar.css";
 
-export default function Navbar({ isVisible }) {
-  console.log("Navbar isVisible:", isVisible);
+export default function Navbar() {
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (navbarRef.current) {
+        navbarRef.current.classList.add("slide-in");
+      }
+    }, 2000); // Slide down after 2 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className={`navbar-wrapper ${isVisible ? "visible" : ""}`}>
+    <div className="navbar-wrapper" ref={navbarRef}>
       <nav className="navbar">
         <div className="navbar-left">
           <div className="logo">
-            {/* The SVG is now replaced with your logo image */}
             <img src="/logo.png" alt="Harp & Code Logo" className="logo-img" />
-            {/* The company name is updated here */}
             <span>Harp & Code</span>
           </div>
         </div>

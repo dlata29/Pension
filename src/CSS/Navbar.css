@@ -1,24 +1,26 @@
 /* Styles for the wrapper to handle visibility and positioning */
 .navbar-wrapper {
   position: fixed; /* Keeps it fixed at the top */
-  top: 1rem;
+  top: -150px; /* Start hidden above the screen */
   left: 50%;
-  transform: translate(-50%, -150%); /* Start hidden above the screen */
+  transform: translateX(-50%);
   z-index: 50;
   width: 100%;
   max-width: 900px;
-  transition: transform 0.5s ease-in-out;
+  transition: top 0.8s ease, opacity 0.8s ease;
+  opacity: 0;
 }
 
-.navbar-wrapper.visible {
-  transform: translate(-50%, 0); /* Slide into view */
+.navbar-wrapper.slide-in {
+  top: 1rem; /* Slide down into view */
+  opacity: 1;
 }
 
 /* Main navbar styles */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* This creates the space between left, center, right */
+  justify-content: space-between;
   padding: 0.75rem 1.5rem;
   background: #ffffff;
   border-radius: 16px;
@@ -79,9 +81,7 @@
   cursor: pointer;
 }
 
-/* Add this to the end of your Navbar.css file */
-
 .logo-img {
-  width: 28px; /* Sets the width of the logo */
-  height: 28px; /* Sets the height of the logo */
+  width: 28px;
+  height: 28px;
 }
