@@ -25,7 +25,13 @@ export default function Hero({ onVideoEnd }) {
   return (
     <section className="hero-section">
       {/* Background Video */}
-      <video ref={videoRef} className="hero-video" src="/videos/HarpSharp.mp4" autoPlay muted />
+      <video
+        ref={videoRef}
+        className="hero-video"
+        src="public/videos/HarpSharp.mp4"
+        autoPlay
+        muted
+      />
 
       {/* Overlay (contains navbar + text) */}
       <div className="hero-overlay left-align">

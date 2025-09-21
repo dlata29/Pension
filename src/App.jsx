@@ -13,11 +13,15 @@ export default function App() {
   const [isNavbarVisible, setNavbarVisible] = useState(false);
   const productsSectionRef = useRef(null);
 
+  // Video end callback
   const handleVideoEnd = () => {
     setNavbarVisible(true);
   };
 
+  // Scroll observer
   useEffect(() => {
+    if (!productsSectionRef.current) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -26,22 +30,17 @@ export default function App() {
           setNavbarVisible(false);
         }
       },
-      {
-        threshold: 0.5,
-      }
+      { threshold: 0.5 }
     );
 
-    const currentRef = productsSectionRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    observer.observe(productsSectionRef.current);
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
+      if (productsSectionRef.current) {
+        observer.unobserve(productsSectionRef.current);
       }
     };
-  }, []);
+  }, [productsSectionRef]);
 
   return (
     <Router>
