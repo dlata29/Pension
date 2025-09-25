@@ -8,6 +8,7 @@ import WebDevelopment from "./components/WebDevelopment";
 import AppDevelopment from "./components/AppDevelopment";
 import AISolutions from "./components/AISolutions";
 import Footer from "./components/Footer";
+import OurProducts from "./components/OurProducts";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
                 <Hero />
                 <Products />
                 <About />
+                <OurProducts />
               </>
             }
           />
